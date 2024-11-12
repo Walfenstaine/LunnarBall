@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI
-    ;
+using UnityEngine.UI;
+using YG;
+
 public class Lusa : MonoBehaviour
 {
     public Text scores;
@@ -10,10 +11,12 @@ public class Lusa : MonoBehaviour
 
     public void OnClick() 
     {
-        data.scores += 1;
+        YandexGame.savesData.record += 1;
+        YandexGame.SaveProgress();
+        YandexGame.NewLeaderboardScores("LEADER666", YandexGame.savesData.record);
     }
     private void FixedUpdate()
     {
-        scores.text = "" + data.scores;
+        scores.text = "" + YandexGame.savesData.record;
     }
 }

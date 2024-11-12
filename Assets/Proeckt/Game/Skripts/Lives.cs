@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine;
+using YG.Example;
+using YG;
 public class Lives : MonoBehaviour
 {
+    public int helse = 5;
     public int balls;
     public Data data;
     public GameObject[] lives;
@@ -16,8 +19,28 @@ public class Lives : MonoBehaviour
             regit = this;
         }
     }
+    private void OnEnable()
+    {
+        YandexGame.RewardVideoEvent += Reclam;
+    }
+    private void OnDisable()
+    {
+        YandexGame.RewardVideoEvent -= Reclam;
+    }
+    void Reclam(int id) 
+    {
+        if (id > 0) 
+        {
+            helse = 5;
+            Interface.rid.Sum(1);
+        }
+    }
+    public void ExampleOpenRewardAd(int id)
+    {
+        YandexGame.RewVideoShow(id);
 
-    public void BalsTimer() 
+    }
+        public void BalsTimer() 
     {
         if (balls > 1)
         {
@@ -34,9 +57,9 @@ public class Lives : MonoBehaviour
     }
     public void Damag() 
     {
-        if (data.lives > 0)
+        if (helse > 0)
         {
-            data.lives -= 1;
+           helse -= 1;
         }
         else 
         {
@@ -47,7 +70,7 @@ public class Lives : MonoBehaviour
     {
         for (int i = 0; i < lives.Length; i++) 
         {
-            if (i <= data.lives)
+            if (i <= helse)
             {
                 lives[i].SetActive(true);
             }
