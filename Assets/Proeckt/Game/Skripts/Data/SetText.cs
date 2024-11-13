@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-using static SetText;
+using YG;
 
 
 public class SetText: MonoBehaviour
@@ -12,17 +12,17 @@ public class SetText: MonoBehaviour
     private void Start()
     {
         Text myText = GetComponent<Text>(); 
-        if (langviges == Langviges.rus)
+        if (YandexGame.EnvironmentData.language == "ru")
         {
             myText.text = language.ru;
         }
         else
         {
-            if (langviges == Langviges.eng) 
+            if (YandexGame.EnvironmentData.language == "en") 
             {
                 myText.text = language.en;
             }
-            if (langviges == Langviges.turk)
+            if (YandexGame.EnvironmentData.language == "tr")
             {
                 myText.text = language.tr;
             }
