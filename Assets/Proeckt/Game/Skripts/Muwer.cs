@@ -47,7 +47,7 @@ public class Muwer : MonoBehaviour
     {
         Vector2 pos = Input.mousePosition;
         looker.LookAt(pos);
-        if (rb.velocity.magnitude > 0.5f)
+        if (rb.velocity.magnitude > 12.0f)
         {
             image.enabled = false;
         }
