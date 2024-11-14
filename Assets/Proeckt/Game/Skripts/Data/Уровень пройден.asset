@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dbe944560a3bee4fbaf5d52d9b254ed, type: 3}
   m_Name: "\u0423\u0440\u043E\u0432\u0435\u043D\u044C \u043F\u0440\u043E\u0439\u0434\u0435\u043D"
   m_EditorClassIdentifier: 
-  <en>k__BackingField: "Ge\xE7ilen seviye"
+  <en>k__BackingField: Level completed
   <ru>k__BackingField: "\u0423\u0440\u043E\u0432\u0435\u043D\u044C \u043F\u0440\u043E\u0439\u0434\u0435\u043D"
-  <tr>k__BackingField: Level completed
+  <tr>k__BackingField: "Ge\xE7ilen seviye"
