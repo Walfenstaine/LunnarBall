@@ -11,7 +11,7 @@ public class Muwer : MonoBehaviour
     public Rigidbody2D rb;
     public Transform looker;
     public static Muwer regit;
-    private Vector3 pos;
+    private Vector3 pose;
     public static Muwer rid { get; set; }
     void Awake()
     {
@@ -31,7 +31,7 @@ public class Muwer : MonoBehaviour
 
     public void Rebort() 
     {
-        transform.localPosition = pos;
+        transform.localPosition = pose;
         rb.velocity = Vector3.zero;
         SoundPlayer.regit.Play(ded);
     }
@@ -39,6 +39,7 @@ public class Muwer : MonoBehaviour
     {
         if (image.enabled) 
         {
+            pose = transform.localPosition;
             rb.AddForce(looker.forward * power.fillAmount*50000);
             SoundPlayer.regit.Play(kik);
         }
@@ -53,7 +54,6 @@ public class Muwer : MonoBehaviour
         }
         else 
         {
-            pos = transform.localPosition;
             image.enabled = true;
         }
     }

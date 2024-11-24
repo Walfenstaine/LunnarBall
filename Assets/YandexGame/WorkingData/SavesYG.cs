@@ -9,7 +9,7 @@ namespace YG
         public bool isFirstSession = true;
         public string language = "ru";
         public bool promptDone;
-
+        public string lavel = "Scene1";
         public int record = 0;
         public bool soundOn;
 

@@ -5,6 +5,7 @@ using UnityEngine;
 public class SoundPlayer : MonoBehaviour
 {
     public AudioSource sors;
+    private float timer;
     public static SoundPlayer regit { get; set; }
     void Awake()
     {
@@ -23,6 +24,10 @@ public class SoundPlayer : MonoBehaviour
     }
     public void Play(AudioClip clip)
     {
-        sors.PlayOneShot(clip);
+        if (Time.time > timer) 
+        {
+            sors.PlayOneShot(clip);
+            timer = Time.time + 0.05f;
+        }
     }
 }

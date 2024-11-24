@@ -27,6 +27,8 @@ public class LavelAnd : MonoBehaviour {
     }
     public void Next()
     {
+        YandexGame.savesData.lavel = level;
+        YandexGame.SaveProgress();
         SceneManager.LoadScene(level);
     }
 }
